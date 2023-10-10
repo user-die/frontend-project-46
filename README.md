@@ -1,3 +1,6 @@
+# Find Difference
+## App for finding difference between two json files
+
 ### Install game packages
 
 - Clone [this](https://github.com/ldolohov/frontend-project-lvl2) repository
