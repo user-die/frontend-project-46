@@ -1,6 +1,3 @@
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/user-die/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/user-die/frontend-project-46/actions)
-
 ### Install game packages
 
 - Clone [this](https://github.com/ldolohov/frontend-project-lvl2) repository
