@@ -3,7 +3,7 @@
 
 ### Install game packages
 
-- Clone [this](https://github.com/ldolohov/frontend-project-lvl2) repository
+- Clone this repository
 - Run these commands from cloned directory to install packages
 ```
 $ npm install
