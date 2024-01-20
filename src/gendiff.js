@@ -2,6 +2,20 @@
 import { program } from "commander";
 import { genDiff } from "../index.js";
 
+const format = {
+  plain: (filepath1, filepath2) =>
+    console.log(genDiff(filepath1, filepath2, "plain")),
+
+  stylish: (filepath1, filepath2) =>
+    console.log(genDiff(filepath1, filepath2, "stylish")),
+
+  json: (filepath1, filepath2) =>
+    console.log(genDiff(filepath1, filepath2, "json")),
+
+  undefined: (filepath1, filepath2) =>
+    console.log(genDiff(filepath1, filepath2, "stylish")),
+};
+
 program
   .name("gendiff")
   .description("Compares two configuration files and shows a difference.")
@@ -10,14 +24,8 @@ program
   .arguments("<filepath1> <filepath2>")
   .action((filepath1, filepath2) => {
     const options = program.opts();
-    if (options.format === 'plain') {
-      console.log(genDiff(filepath1, filepath2, 'plain'));
-    } else if (options.format === 'stylish' || options.format === undefined) {
-      console.log(genDiff(filepath1, filepath2, 'stylish'));
-    } else if (options.format === 'json') {
-      console.log(genDiff(filepath1, filepath2, 'json'));
-    }
-});
+    format[options.format](filepath1, filepath2);
+  });
 
 program.parse();
 

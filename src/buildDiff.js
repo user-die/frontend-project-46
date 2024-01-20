@@ -14,8 +14,13 @@ export function buildDiff(f1, f2) {
     if (_.isObject(f1[key]) && _.isObject(f2[key])) {
       return { key, children: buildDiff(f1[key], f2[key]), status: "nested" };
     }
-    return f1[key] === f2[key] ? { key, value: f1[key], status: "unchanged" } : {
-      key, value: f1[key], value2: f2[key], status: "changed",
+    return f1[key] === f2[key]
+      ? { key, value: f1[key], status: "unchanged" }
+      : {
+          key,
+          value: f1[key],
+          value2: f2[key],
+          status: "changed",
         };
   });
 }
